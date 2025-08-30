@@ -291,7 +291,9 @@ document.getElementById("add_money_toggle").addEventListener('click' , function(
     document.getElementById("Bonus").style.display = "none";
     document.getElementById("bill").style.display = "none";
     document.getElementById("transaction").style.display = "none";
+    document.getElementById("operation").style.display = "none";
 })
+document.getElementById("operation").style.display = "none";
 
 // cashout toggle
 
@@ -305,6 +307,7 @@ document.getElementById("cashout_toggle").addEventListener('click' , function(){
     document.getElementById("Bonus").style.display = "none";
     document.getElementById("bill").style.display = "none";
     document.getElementById("transaction").style.display = "none";
+    document.getElementById("operation").style.display = "none";
 })
 
 
@@ -319,6 +322,7 @@ document.getElementById("transfer_toggle").addEventListener('click' , function()
     document.getElementById("Bonus").style.display = "none";
     document.getElementById("bill").style.display = "none";
     document.getElementById("transaction").style.display = "none";
+    document.getElementById("operation").style.display = "none";
 
 })
 
@@ -333,6 +337,7 @@ document.getElementById("bonus_toggle").addEventListener('click' , function(){
     document.getElementById("Bonus").style.display = "block";
     document.getElementById("bill").style.display = "none";
     document.getElementById("transaction").style.display = "none";
+    document.getElementById("operation").style.display = "none";
 
 })
 
@@ -348,6 +353,7 @@ document.getElementById("bill_toggle").addEventListener('click' , function(){
     document.getElementById("Bonus").style.display = "none";
     document.getElementById("bill").style.display = "block";
     document.getElementById("transaction").style.display = "none";
+    document.getElementById("operation").style.display = "none";
 
 })
 
@@ -363,6 +369,7 @@ document.getElementById("transaction_toggle").addEventListener('click' , functio
     document.getElementById("Bonus").style.display = "none";
     document.getElementById("bill").style.display = "none";
     document.getElementById("transaction").style.display = "block";
+    document.getElementById("operation").style.display = "none";
 
 })
 
