@@ -243,7 +243,7 @@ document.getElementById("transaction_toggle").addEventListener('click' , functio
     let transaction_contaienr = document.getElementById("transaction_contaienr")
     transaction_contaienr.innerHTML = ""
 
-    for (let data of transaction_data){ 
+    for (let data of transaction_data.slice().reverse()){ 
         const tr_card = document.createElement("div")
         tr_card.innerHTML=`
         <div class=" bg-white p-3 flex justify-between items-center shadow-lg rounded-lg mt-2.5">
