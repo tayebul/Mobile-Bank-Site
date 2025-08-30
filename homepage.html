@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/x-icon" href="payoo.ico">
 
 
+    
     <!-- daisyUI cdn     -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
@@ -18,6 +20,9 @@
 
 
     <title>Homepage</title>
+
+
+    
 </head>
 
 <body class="bg-[#f4f5f7] h-[100vh]">
@@ -36,14 +41,14 @@
 
             </div>
             <div>
-                <button class="btn rounded-[9px] text-[#666768] text-[14px] border-0.5 border-[#e2dbdb]" id="logout"><i
+                <button class="btn rounded-[9px] text-[#666768] text-[14px] border-0.5 border-[#e2dbdb] " id="logout"><i
                         class="fa-solid fa-right-from-bracket rotate-180"></i> Log Out</button>
             </div>
 
         </nav>
 
         <div class=" max-w-lg mx-auto mt-[30px]  ">
-            <h1 class="font-bold text-[24px] text-black text-center mb-2.5 ">🔥 PAYSIFY 🔥</h1>
+            <h1 class="font-bold text-[24px] text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-600 to-cyan-500 text-center mb-2.5"> <i class="fa-solid fa-money-check-dollar"></i> PAYSIFY </h1>
             <p class="text-[16px] text-[#666768] text-center">Secure - Integrated - Fast - Yield  </p>
             <p class="text-[16px] text-[#666768] text-center">Mobile Banking Services </p>
         </div>
@@ -53,32 +58,32 @@
         <div class=" min-h-[50px] grid grid-cols-3 gap-[20px] mt-[24px] max-w-lg mx-auto justify-items-center p-5 ">
 
             <div
-                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="add_money_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg transform transition-transform duration-1000  active:scale-110" id="add_money_toggle">
                 <img src="./assets/wallet1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Add Money</h2>
             </div>
             <div
-                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="cashout_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg transform transition-transform duration-1000  active:scale-110" id="cashout_toggle">
                 <img src="./assets/send1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Cashout</h2>
             </div>
             <div
-                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="transfer_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg transform transition-transform duration-1000  active:scale-110" id="transfer_toggle">
                 <img src="./assets/money1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Transfer Money</h2>
             </div>
             <div
-                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="bonus_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg transform transition-transform duration-1000  active:scale-110" id="bonus_toggle">
                 <img src="./assets/bonus1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Get Bonus</h2>
             </div>
             <div
-                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="bill_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg transform transition-transform duration-1000  active:scale-110" id="bill_toggle">
                 <img src="./assets/purse1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Pay Bill</h2>
             </div>
             <div
-                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="transaction_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg  transform transition-transform duration-1000  active:scale-110"  id="transaction_toggle">
                 <img src="./assets/transaction1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Transactions</h2>
             </div>
@@ -92,8 +97,11 @@
 
     <div class="all_forms_section max-w-lg mx-auto mt-[30px]">
 
+       <div class="text-center mt-[50px]">
+        <h1>Please Select an Operation</h1>
+       </div>
 
-        <div id="default" class="text-center mt-[150px]"> Please Select an operation</div>
+        <div id="default" class="text-center mt-1 p-19 "> <img src="payoo.png" alt=""></div>
 
 
         <!-- add money -->
@@ -126,7 +134,7 @@
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl focus:outline-1 w-full mb-[15px]" />
                 </div>
                 <button id="add_money_btn" type="button"
-                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white">Add
+                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Add
                     Money</button>
             </form>
 
@@ -153,7 +161,7 @@
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl focus:outline-1 w-full mb-[15px]" />
                 </div>
                 <button id="withdraw_money_btn" type="button"
-                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white ">Withdraw
+                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Withdraw
                     Money</button>
             </form>
 
@@ -180,7 +188,7 @@
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl focus:outline-1 w-full mb-[15px]" />
                 </div>
                 <button id="send_money_btn" type="button"
-                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white ">Send
+                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Send
                     Money</button>
             </form>
 
@@ -196,7 +204,7 @@
                     class="input bg-[#f4f5f7] mt-3 rounded-3xl focus:outline-1 w-full mb-[15px]" id="coupon_no" />
             </div>
             <button id="bonus_btn" type="button"
-                class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white ">Get
+                class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Get
                 Bonus</button>
         </form>
     </div>
@@ -233,7 +241,7 @@
                         class="input bg-[#f4f5f7] mt-3 rounded-3xl focus:outline-1 w-full mb-[15px]" />
                 </div>
                 <button id="paybill_btn" type="button"
-                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white">Pay
+                    class="btn mt-3 bg-[#0874f2] border-0 rounded-3xl w-full h-[50px] text-lg text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Pay
                     </button>
             </form>
 
@@ -251,19 +259,7 @@
             </div> -->
 
             <div id="transaction_contaienr">
-                <div class=" bg-white p-3 flex justify-between items-center shadow-lg rounded-lg">
-                    <div class="flex items-center">
-                        <div class="border-2 border-[#f4f5f7] p-2 rounded-3xl bg-[#f4f5f7]">
-                            <img src="./assets/wallet1.png" alt="">
-                        </div>
-                        <div class="ml-3 text-[#080808B2]">
-                            <h1 class="font-bold text-[17px]" >Electric bil</h1>
-                            <p class="text-[13px]">today 1.44pm</p>
-                        </div>
-                    </div>
-        
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
+                
             </div>
 
     </div>

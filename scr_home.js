@@ -47,6 +47,10 @@ document.getElementById("add_money_btn").addEventListener('click', function(e){
         }
     }
 
+    if(add_amount <= 0){
+        alert("Invalid Amount");
+    }
+
     if(account_number.toString().length == 11  && pin_check == default_pin){
         let new_balance = balance + add_amount;
         document.getElementById("current_balance").innerText = new_balance;
@@ -88,6 +92,13 @@ document.getElementById("withdraw_money_btn").addEventListener('click' , functio
         }        
         alert("Invalid Account Number");    
     }
+
+    if(cashout_amount > balance){
+        alert("Insufficient Balance");
+        location.reload();
+            return;
+    }
+
     if(agent_no_check.toString().length == 11 && cashout_pin_check == default_pin){
         let balance_cashout = balance - cashout_amount;
         document.getElementById("current_balance").innerText = balance_cashout;
@@ -229,25 +240,44 @@ document.getElementById("paybill_btn").addEventListener('click' , function(e){
 
 document.getElementById("transaction_toggle").addEventListener('click' , function(e){
     // console.log(transaction_data);  
-    let transaction_contaienr = document.getElementById("transaction_contaienr");
+    let transaction_contaienr = document.getElementById("transaction_contaienr")
+    transaction_contaienr.innerHTML = ""
+
+    for (let data of transaction_data){ 
+        const tr_card = document.createElement("div")
+        tr_card.innerHTML=`
+        <div class=" bg-white p-3 flex justify-between items-center shadow-lg rounded-lg mt-2.5">
+                    <div class="flex items-center">
+                        <div class="border-2 border-[#f4f5f7] p-2 rounded-3xl bg-[#f4f5f7]">
+                            <img src="./assets/wallet1.png" alt="">
+                        </div>
+                        <div class="ml-3 text-[#080808B2]">
+                            <h1 class="font-bold text-[17px]" >${data.name}</h1>
+                            <p class="text-[13px]">${data.date}</p>
+                        </div>
+                    </div>
+        
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+        `
+        transaction_contaienr.appendChild(tr_card)
+
+    }
 
 
 
 })
-
-
-
-
-
-
-
-
 
 //log out
 
 document.getElementById("logout").addEventListener('click' ,function(e){
     window.location.href="./index.html"
 })
+
+
+
+
+
 
 // add money toggle
 
