@@ -43,40 +43,42 @@
         </nav>
 
         <div class=" max-w-lg mx-auto mt-[30px]  ">
-            <h1 class="font-bold text-[24px] text-black text-center ">🔥 Welcome to Payooo!</h1>
-            <p class="text-[16px] text-[#666768] text-center">Enjoy easy and convenient financial services with us.
-                Cashout charge is low and secure than any other. </p>
+            <h1 class="font-bold text-[24px] text-black text-center mb-2.5 ">🔥 PAYSIFY 🔥</h1>
+            <p class="text-[16px] text-[#666768] text-center">Secure - Integrated - Fast - Yield  </p>
+            <p class="text-[16px] text-[#666768] text-center">Mobile Banking Services </p>
         </div>
 
-        <div class=" min-h-[50px] grid grid-cols-3 gap-[20px] mt-[24px] max-w-lg mx-auto justify-items-center p-5">
+
+
+        <div class=" min-h-[50px] grid grid-cols-3 gap-[20px] mt-[24px] max-w-lg mx-auto justify-items-center p-5 ">
 
             <div
-                class="border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="add_money_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="add_money_toggle">
                 <img src="./assets/wallet1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Add Money</h2>
             </div>
             <div
-                class="border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="cashout_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="cashout_toggle">
                 <img src="./assets/send1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Cashout</h2>
             </div>
             <div
-                class="border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="transfer_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="transfer_toggle">
                 <img src="./assets/money1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Transfer Money</h2>
             </div>
             <div
-                class="border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="bonus_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="bonus_toggle">
                 <img src="./assets/bonus1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Get Bonus</h2>
             </div>
             <div
-                class="border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="bill_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="bill_toggle">
                 <img src="./assets/purse1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Pay Bill</h2>
             </div>
             <div
-                class="border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="transaction_toggle">
+                class="click_feature border-0.8 rounded-[12px] border-gray-300 w-[123px] h-[90px] flex flex-col justify-center items-center gap-2.5 shadow-lg" id="transaction_toggle">
                 <img src="./assets/transaction1.png" alt="">
                 <h2 class="text-[#080808b3] text-[15px]">Transactions</h2>
             </div>
@@ -91,7 +93,7 @@
     <div class="all_forms_section max-w-lg mx-auto mt-[30px]">
 
 
-        <div id="front" class="text-center mt-[150px]"> Please Select an operation</div>
+        <div id="default" class="text-center mt-[150px]"> Please Select an operation</div>
 
 
         <!-- add money -->
@@ -239,13 +241,34 @@
 
         <!-- Transaction -->
         <div id="transaction" class="hidden">
-            <h1 class="text-lg text-gray-400 text-center mt-[150px]">No Transaction History</h1>
-        </div>
+            <div class="flex justify-between items-center mx-[10px] ">
+                <h1 class=" mb-4 text-[18px] font-bold">Transaction</h1>
+                <p class="text-[#08080866]">View All</p>
+            </div>
+            
+            <!-- <div class="border-1 border-gray-200 bg-white rounded-[20px] p-[32px] shadow-lg max-w-lg mx-[10px] min-h-[100px]" >
+            <h1 class="text-lg text-gray-400 text-center mt-[10px]">No Transaction History</h1>
+            </div> -->
 
-
+            <div id="transaction_contaienr">
+                <div class=" bg-white p-3 flex justify-between items-center shadow-lg rounded-lg">
+                    <div class="flex items-center">
+                        <div class="border-2 border-[#f4f5f7] p-2 rounded-3xl bg-[#f4f5f7]">
+                            <img src="./assets/wallet1.png" alt="">
+                        </div>
+                        <div class="ml-3 text-[#080808B2]">
+                            <h1 class="font-bold text-[17px]" >Electric bil</h1>
+                            <p class="text-[13px]">today 1.44pm</p>
+                        </div>
+                    </div>
+        
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
 
     </div>
 
+    
 
     <script src="scr_home.js"></script>
 </body>

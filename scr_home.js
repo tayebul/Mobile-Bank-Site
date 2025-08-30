@@ -1,9 +1,29 @@
+/* necessary functions*/
+
+const transaction_data = []
+
+
+// selection
+function click_ftr(cls , id){
+    
+    const click = document.getElementsByClassName(cls)
+    for(let c of click){
+        c.classList.remove('bg-[#0874f20d]')
+    }
+    document.getElementById(id).classList.add('bg-[#0874f20d]')
+}
+
+
+
+
+
+
+
 
 // Add money  design
 
 document.getElementById("add_money_btn").addEventListener('click', function(e){
     e.preventDefault();
-    console.log("clicked")
     const default_account = 12345678;
     const default_pin = 1234;
     const bank = document.getElementById("bank").value;
@@ -28,19 +48,24 @@ document.getElementById("add_money_btn").addEventListener('click', function(e){
     }
 
     if(account_number.toString().length == 11  && pin_check == default_pin){
-        
-        console.log(bank,account,add_amount,pin_check)
         let new_balance = balance + add_amount;
-        console.log("new balace is : " , new_balance)
         document.getElementById("current_balance").innerText = new_balance;
+        const data = {
+            name : "Add Money",
+            date : new Date().toLocaleTimeString()
+        }
+        transaction_data.push(data)
+        
         return;
     }
+
   
     if(pin_check !== default_pin || pin_check.value == null){
         alert("Pin Number did not match.");
         return;
     }
-  
+
+    
 })
 
 
@@ -66,6 +91,11 @@ document.getElementById("withdraw_money_btn").addEventListener('click' , functio
     if(agent_no_check.toString().length == 11 && cashout_pin_check == default_pin){
         let balance_cashout = balance - cashout_amount;
         document.getElementById("current_balance").innerText = balance_cashout;
+        const data = {
+            name : "Cash Out",
+            date : new Date().toLocaleTimeString()
+        }
+        transaction_data.push(data)
         let balance_var_cashout = parseInt( document.getElementById("current_balance").innerText);
         if(balance_var_cashout < 0){
             alert("Insufficient Balance");
@@ -103,7 +133,12 @@ document.getElementById("send_money_btn").addEventListener('click' , function(e)
     }
     if(user_no_check.toString().length == 11 && send_pin_check == default_pin){
         let balance_transfer = balance - send_amount;
-        document.getElementById("current_balance").innerText = balance_transfer; 
+        document.getElementById("current_balance").innerText = balance_transfer;
+        const data = {
+            name : "Send Money",
+            date : new Date().toLocaleTimeString()
+        } 
+        transaction_data.push(data)
         let balance_var_send = parseInt( document.getElementById("current_balance").innerText);
         if(balance_var_send < 0){
             alert("Insufficient Balance");
@@ -131,6 +166,11 @@ document.getElementById("send_money_btn").addEventListener('click' , function(e)
     if(bonus_no_check == coupon_default){
         let balance_bonus = balance + 1000;
         document.getElementById("current_balance").innerText = balance_bonus;
+        const data = {
+            name : "Bonus Added",
+            date : new Date().toLocaleTimeString()
+        } 
+        transaction_data.push(data)
         return;
     }
     else{
@@ -164,6 +204,11 @@ document.getElementById("paybill_btn").addEventListener('click' , function(e){
     if(biller_no_check.toString().length == 11 && bill_pin_check == default_pin){
         let balance_bill = balance - bill_amount;
         document.getElementById("current_balance").innerText = balance_bill; 
+        const data = {
+            name : "Bill Paid",
+            date : new Date().toLocaleTimeString()
+        } 
+        transaction_data.push(data)
         let balance_var_bill = parseInt( document.getElementById("current_balance").innerText);
         if(balance_var_bill < 0){
             alert("Insufficient Balance");
@@ -182,7 +227,13 @@ document.getElementById("paybill_btn").addEventListener('click' , function(e){
 
 // transaction
 
+document.getElementById("transaction_toggle").addEventListener('click' , function(e){
+    // console.log(transaction_data);  
+    let transaction_contaienr = document.getElementById("transaction_contaienr");
 
+
+
+})
 
 
 
@@ -201,9 +252,10 @@ document.getElementById("logout").addEventListener('click' ,function(e){
 // add money toggle
 
 document.getElementById("add_money_toggle").addEventListener('click' , function(){
-
+    
+    click_ftr("click_feature","add_money_toggle");
     document.getElementById("Add_Money").style.display = "block";
-    document.getElementById("front").style.display = "none";
+    document.getElementById("default").style.display = "none";
     document.getElementById("Cashout").style.display = "none";
     document.getElementById("transfer").style.display = "none";
     document.getElementById("Bonus").style.display = "none";
@@ -215,8 +267,9 @@ document.getElementById("add_money_toggle").addEventListener('click' , function(
 
 document.getElementById("cashout_toggle").addEventListener('click' , function(){
 
+    click_ftr("click_feature","cashout_toggle");
     document.getElementById("Add_Money").style.display = "none";
-    document.getElementById("front").style.display = "none";
+    document.getElementById("default").style.display = "none";
     document.getElementById("Cashout").style.display = "block";
     document.getElementById("transfer").style.display = "none";
     document.getElementById("Bonus").style.display = "none";
@@ -227,9 +280,10 @@ document.getElementById("cashout_toggle").addEventListener('click' , function(){
 
 //transfer toggle
 document.getElementById("transfer_toggle").addEventListener('click' , function(){
-
+    
+    click_ftr("click_feature","transfer_toggle");
     document.getElementById("Add_Money").style.display = "none";
-    document.getElementById("front").style.display = "none";
+    document.getElementById("default").style.display = "none";
     document.getElementById("Cashout").style.display = "none";
     document.getElementById("transfer").style.display = "block";
     document.getElementById("Bonus").style.display = "none";
@@ -241,8 +295,9 @@ document.getElementById("transfer_toggle").addEventListener('click' , function()
 // bonus toggle
 document.getElementById("bonus_toggle").addEventListener('click' , function(){
 
+    click_ftr("click_feature","bonus_toggle");
     document.getElementById("Add_Money").style.display = "none";
-    document.getElementById("front").style.display = "none";
+    document.getElementById("default").style.display = "none";
     document.getElementById("Cashout").style.display = "none";
     document.getElementById("transfer").style.display = "none";
     document.getElementById("Bonus").style.display = "block";
@@ -255,8 +310,9 @@ document.getElementById("bonus_toggle").addEventListener('click' , function(){
 
 document.getElementById("bill_toggle").addEventListener('click' , function(){
 
+    click_ftr("click_feature","bill_toggle");
     document.getElementById("Add_Money").style.display = "none";
-    document.getElementById("front").style.display = "none";
+    document.getElementById("default").style.display = "none";
     document.getElementById("Cashout").style.display = "none";
     document.getElementById("transfer").style.display = "none";
     document.getElementById("Bonus").style.display = "none";
@@ -269,8 +325,9 @@ document.getElementById("bill_toggle").addEventListener('click' , function(){
 
 document.getElementById("transaction_toggle").addEventListener('click' , function(){
 
+    click_ftr("click_feature","transaction_toggle");
     document.getElementById("Add_Money").style.display = "none";
-    document.getElementById("front").style.display = "none";
+    document.getElementById("default").style.display = "none";
     document.getElementById("Cashout").style.display = "none";
     document.getElementById("transfer").style.display = "none";
     document.getElementById("Bonus").style.display = "none";
